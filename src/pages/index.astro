@@ -1,22 +1,30 @@
 ---
 import DocumentsCard from "@/components/DocumentsCard.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import documentsData from "@/data/documents.json";
 ---
 
-<BaseLayout title="Publicactions" description="The description">
+<BaseLayout title="Publications" description="The description">
   <div class="DocumentsCardsContainer">
-    <DocumentsCard />
-    <DocumentsCard />
-    <DocumentsCard />
-    <DocumentsCard />
+    {
+      documentsData.map((data) => (
+        <DocumentsCard
+          title={data.title}
+          subtitle={data.subtitle ?? undefined}
+          showSubtitle={data.showSubtitle}
+          content={data.content}
+          items={data.items}
+        />
+      ))
+    }
   </div>
 </BaseLayout>
 
 <style lang="scss">
   .DocumentsCardsContainer {
-    padding-block: var(--size-7);
+    padding-block: var(--size-16);
     display: flex;
     flex-flow: column nowrap;
-    gap: var(--size-7);
+    gap: var(--size-12);
   }
 </style>

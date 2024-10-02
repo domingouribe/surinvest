@@ -3,16 +3,18 @@
   --typography: Helvetica, sans-serif;
 
   //Colors
-  --orange-color: #f36e21;
-  --blue-color: #2c348f;
-  --grey-color-200: #afafaf;
-  --grey-color-400: #999;
+  --orange-color: hsl(22, 90%, 54%);
+  --blue-color: hsl(235, 53%, 37%);
+  --grey-color-050: hsl(0, 0%, 90%);
+  --grey-color-100: hsl(0, 0%, 80%);
+  --grey-color-200: hsl(0, 0%, 70%);
+  --grey-color-400: hsl(0, 0%, 60%);
 
   //Alias
   --text-color: var(--grey-color-400);
   --link-default-color: var(--blue-color);
   --link-hover-color: var(--orange-color);
-  --border-strokes-color: var(--grey-color-200);
+  --border-strokes-color: var(--grey-color-050);
   //Tokens
   --primary-color: var(--orange-color);
   --secondary-color: var(--blue-color);

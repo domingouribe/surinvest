@@ -1,24 +1,31 @@
 ---
+// DocumentsCard.astro
+interface Props {
+  title: string;
+  subtitle?: string | null;
+  showSubtitle?: boolean;
+  content: string;
+  items: string[];
+}
 
+const { title, subtitle, showSubtitle = false, content, items } = Astro.props;
 ---
 
 <article class="Article">
   <header class="Article-header">
-    <h2 class="Article-title">Publications</h2>
-    <span class="Article-title__auxiliar">Insights to Open Minds</span>
+    <h2 class="Article-title">{title}</h2>
+    {
+      showSubtitle && subtitle && (
+        <span class="Article-title__auxiliar">{subtitle}</span>
+      )
+    }
   </header>
-
   <div class="Article-content">
-    <p>
-      Please select a link below to view chronicles and download selected
-      articles:
-    </p>
-
-    <div class="Article-content__items">
-      <a href="#">Articles & Policy Papers</a>
-      <a href="#">Co-Authored and/or Led World Bank Technical Paper Series</a>
-      <a href="#">Hearings, Testimonials, Op Eds & Interviews</a>
-      <a href="#">Books</a>
+    <div class="Article-content__inner">
+      <p>{content}</p>
+      <div class="Article-content__items">
+        {items.map((item) => <a href="#">{item}</a>)}
+      </div>
     </div>
   </div>
 </article>
@@ -26,11 +33,18 @@
 <style lang="scss">
   .Article {
     padding: var(--size-5);
-    border: solid 1px var(--border-strokes-color);
+    border: solid 2px var(--border-strokes-color);
     border-radius: var(--border-radius-sm);
     display: flex;
     flex-flow: column nowrap;
     gap: var(--size-6);
+    position: relative;
+
+    &-header {
+      margin-top: -50px;
+      position: relative;
+      cursor: pointer;
+    }
 
     &-title {
       background-color: var(--primary-color);
@@ -41,18 +55,47 @@
       padding-inline: var(--size-3);
       font-size: var(--size-3);
       text-transform: uppercase;
+      position: absolute;
+      z-index: 2;
+
+      &__auxiliar {
+        background-color: var(--grey-color-200);
+        position: absolute;
+        color: white;
+        top: 9px;
+        margin-left: 88px;
+        border-radius: var(--border-radius-md);
+        font-size: var(--size-3);
+        padding: var(--size-1) var(--size-4) var(--size-1) var(--size-16);
+        font-style: italic;
+      }
     }
 
     &-content {
-      display: flex;
-      flex-flow: column nowrap;
-      gap: var(--size-4);
-    
-    &__items {
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      max-height: 0;
+
+      &__inner {
+        padding-top: 50px;
         display: flex;
         flex-flow: column nowrap;
         gap: var(--size-4);
+      }
+
+      &__items {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: var(--size-4);
+      }
     }
+
+    &.active {
+      .Article-content {
+        max-height: 1000px; /* Adjust this value as needed */
+      }
     }
   }
 </style>
+
+<script src="../scripts/accordion.js"></script>
