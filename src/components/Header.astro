@@ -22,14 +22,22 @@ import Logo from "@/assets/surinvest_logo.png";
 <style lang="scss">
   .Header-container {
     display: flex;
+    flex-flow: row wrap;
+    gap: var(--size-3);
     justify-content: space-between;
     align-items: center;
+    padding-top: var(--size-3);
     padding-bottom: var(--size-3);
+    align-items: center;
 
     .TagName {
       color: var(--secondary-color);
       font-size: var(--size-6);
       font-style: italic;
+
+      @media (max-width: 440px) {
+        font-size: var(--size-3);
+      }
     }
   }
 </style>
