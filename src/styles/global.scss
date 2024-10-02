@@ -1,4 +1,5 @@
 @use "normalize.css";
+
 :root {
   --typography: Helvetica, sans-serif;
 
@@ -138,4 +139,8 @@ body {
   font-family: var(--typography);
   color: var(--text-color);
   background-color: white;
+
+  @media (max-width: 440px) {
+    font-size: var(--size-3);
+  }
 }
