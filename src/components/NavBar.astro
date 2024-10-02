@@ -5,32 +5,36 @@ const { menuItems } = siteInfo;
 ---
 
 <div class="Container">
-  <nav class="NavBar">
-    {
-      menuItems.map((item) => (
-        <a class="NavBar-item" href={item.page}>
-          {item.label}
-        </a>
-      ))
-    }
-  </nav>
+	<nav class="NavBar">
+		{
+			menuItems.map((item) => (
+				<a class="NavBar-item" href={item.page}>
+					{item.label}
+				</a>
+			))
+		}
+	</nav>
 </div>
 
 <style lang="scss">
-  .NavBar {
-    display: flex;
-    gap: 2rem;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    padding-top: var(--size-7);
-    padding-bottom: var(--size-4);
-    border-bottom: 2px solid var(--secondary-color);
+	.NavBar {
+		display: flex;
+		gap: 2rem;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		padding-top: var(--size-7);
+		padding-bottom: var(--size-4);
+		border-bottom: 2px solid var(--secondary-color);
 
-    &-item {
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--link-default-color);
-      font-weight: 700;
-    }
-  }
+		&-item {
+			text-transform: uppercase;
+			text-decoration: none;
+			color: var(--link-default-color);
+			font-weight: 700;
+
+			@media (max-width: 440px) {
+				font-size: var(--size-2);
+			}
+		}
+	}
 </style>

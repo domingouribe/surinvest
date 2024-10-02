@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Logo from "@/assets/surinvest_logo.png";
+import Hero from "./Hero.astro";
 ---
 
 <header class="Header">
@@ -12,11 +13,7 @@ import Logo from "@/assets/surinvest_logo.png";
 			<span class="TagName">Developing Frontiers</span>
 		</div>
 	</div>
-	<section class="Hero">
-		<div class="Container">
-			<img src="src/assets/hero-images/08_img_header.png" alt="" />
-		</div>
-	</section>
+	<Hero />
 </header>
 
 <style lang="scss">
@@ -38,6 +35,12 @@ import Logo from "@/assets/surinvest_logo.png";
 			@media (max-width: 440px) {
 				font-size: var(--size-3);
 			}
+		}
+	}
+
+	@media (max-width: 440px) {
+		.Brand {
+			width: 100px;
 		}
 	}
 </style>
