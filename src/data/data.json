@@ -1,0 +1,40 @@
+{
+  "site": {
+    "name": "Surinvest",
+    "tagname": "Developing Frontiers"
+  },
+  "menuItems": [
+    {
+      "label": "About",
+      "page": "/about.html"
+    },
+    {
+      "label": "Team",
+      "page": "/team.html"
+    },
+    {
+      "label": "Associates",
+      "page": "/associates.html"
+    },
+    {
+      "label": "Projects",
+      "page": "/projects.html"
+    },
+    {
+      "label": "Services",
+      "page": "/services.html"
+    },
+    {
+      "label": "Investments",
+      "page": "/investments.html"
+    },
+    {
+      "label": "News",
+      "page": "/news.html"
+    },
+    {
+      "label": "Publications",
+      "page": "/publications.html"
+    }
+  ]
+}
