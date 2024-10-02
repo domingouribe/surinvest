@@ -29,11 +29,14 @@ const { menuItems } = siteInfo;
 		&-item {
 			text-transform: uppercase;
 			text-decoration: none;
+      
 			color: var(--link-default-color);
 			font-weight: 700;
+			border-bottom: 2px solid transparent;
 
-			@media (max-width: 440px) {
-				font-size: var(--size-2);
+			&:hover {
+				color: var(--primary-color);
+				border-bottom: 2px solid var(--secondary-color);
 			}
 		}
 	}

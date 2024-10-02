@@ -4,11 +4,10 @@ interface Props {
 	title: string;
 	subtitle?: string | null;
 	showSubtitle?: boolean;
-	content: string;
-	items: string[];
+	description: string;
 }
 
-const { title, subtitle, showSubtitle = false, content, items } = Astro.props;
+const { title, subtitle, showSubtitle = false, description } = Astro.props;
 ---
 
 <article class="Article">
@@ -20,13 +19,11 @@ const { title, subtitle, showSubtitle = false, content, items } = Astro.props;
 			)
 		}
 	</header>
-	<div class="Article-content">
-		<div class="Article-content__inner">
-			<p>{content}</p>
-			<div class="Article-content__items">
-				{items.map((item) => <a href="#"> Unacosa {item}</a>)}
-			</div>
+	<div class="Article-description">
+		<div class="Article-description__inner">
+			<p>{description}</p>
 		</div>
+		<slot />
 	</div>
 </article>
 
@@ -49,7 +46,7 @@ const { title, subtitle, showSubtitle = false, content, items } = Astro.props;
 		&-title {
 			background-color: var(--primary-color);
 			color: white;
-			width: fit-content;
+			width: fit-description;
 			border-radius: var(--border-radius-md);
 			padding-block: var(--size-2);
 			padding-inline: var(--size-3);
@@ -83,10 +80,10 @@ const { title, subtitle, showSubtitle = false, content, items } = Astro.props;
 			}
 		}
 
-		&-content {
+		&-description {
 			overflow: hidden;
 			transition: max-height 0.3s ease-out;
-			max-height: 0;
+			max-height: auto;
 
 			&__inner {
 				padding-top: 50px;
@@ -103,11 +100,11 @@ const { title, subtitle, showSubtitle = false, content, items } = Astro.props;
 		}
 
 		&.active {
-			.Article-content {
+			.Article-description {
 				max-height: 1000px; /* Adjust this value as needed */
 			}
 		}
 	}
 </style>
 
-<script src="../scripts/accordion.js"></script>
+<!-- <script src="../scripts/accordion.js"></script> -->

@@ -1,40 +1,40 @@
 {
-  "site": {
-    "name": "Surinvest",
-    "tagname": "Developing Frontiers"
-  },
-  "menuItems": [
-    {
-      "label": "About",
-      "page": "/about.html"
-    },
-    {
-      "label": "Team",
-      "page": "/team.html"
-    },
-    {
-      "label": "Associates",
-      "page": "/associates.html"
-    },
-    {
-      "label": "Projects",
-      "page": "/projects.html"
-    },
-    {
-      "label": "Services",
-      "page": "/services.html"
-    },
-    {
-      "label": "Investments",
-      "page": "/investments.html"
-    },
-    {
-      "label": "News",
-      "page": "/news.html"
-    },
-    {
-      "label": "Publications",
-      "page": "/publications.html"
-    }
-  ]
+	"site": {
+		"name": "Surinvest",
+		"tagname": "Developing Frontiers"
+	},
+	"menuItems": [
+		{
+			"label": "About",
+			"page": "/about"
+		},
+		{
+			"label": "Team",
+			"page": "/team"
+		},
+		{
+			"label": "Associates",
+			"page": "/associates"
+		},
+		{
+			"label": "Projects",
+			"page": "/projects"
+		},
+		{
+			"label": "Services",
+			"page": "/services"
+		},
+		{
+			"label": "Investments",
+			"page": "/investments"
+		},
+		{
+			"label": "News",
+			"page": "/news"
+		},
+		{
+			"label": "Publications",
+			"page": "/publications"
+		}
+	]
 }
