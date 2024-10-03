@@ -10,12 +10,15 @@
   --grey-color-100: hsl(0, 0%, 80%);
   --grey-color-200: hsl(0, 0%, 70%);
   --grey-color-400: hsl(0, 0%, 60%);
+  --grey-color-200: hsl(0, 0%, 40%);
 
   //Alias
   --text-color: var(--grey-color-400);
   --link-default-color: var(--blue-color);
   --link-hover-color: var(--orange-color);
   --border-strokes-color: var(--grey-color-050);
+  --item-doc-link: var(--grey-color-200);
+
   //Tokens
   --primary-color: var(--orange-color);
   --secondary-color: var(--blue-color);
@@ -128,7 +131,9 @@ h4 {
 
 a,
 :link {
-  color: var(--secondary-color);
+  color: var(--item-doc-link);
+  text-decoration: none;
+  font-weight: 700;
 
   &:hover {
     color: var(--primary-color);
@@ -143,4 +148,8 @@ body {
   @media (max-width: 440px) {
     font-size: var(--size-3);
   }
+}
+
+main {
+  padding-block: var(--size-10);
 }

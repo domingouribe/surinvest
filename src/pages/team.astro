@@ -9,20 +9,20 @@ import CardsContainer from "@/components/CardsContainer.astro";
 ---
 
 <BaseLayout title="Team" description="Our team">
-	<CardsContainer>
-		{
-			team.map(
-				(member: {
-					data: { name: string; role: string | null | undefined };
-					body: string;
-				}) => (
-					<Card
-						title={member.data.name}
-						subtitle={member.data.role}
-						description={member.body}
-					/>
-				)
-			)
-		}
-	</CardsContainer>
+  <CardsContainer>
+    {
+      team.map(
+        (member: {
+          data: { name: string; role: string | null | undefined };
+          body: string;
+        }) => (
+          <Card
+            title={member.data.name}
+            subtitle={member.data.role}
+            description={member.body}
+          />
+        )
+      )
+    }
+  </CardsContainer>
 </BaseLayout>
